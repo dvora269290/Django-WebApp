@@ -6,7 +6,7 @@ pipeline {
                 dir('django_web_app')
                 {
                     sh 'chmod +x init.sh';
-                    sh './init.sh';
+                    sh 'init.sh';
                 }
             }
         }
@@ -30,7 +30,7 @@ pipeline {
             sh 'version=$(git log -n 1 --format=%s HEAD)';
             sh 'echo $(git log -n 1 --format=%s HEAD)';
             sh 'chmod +x deploy.sh';
-            sh './deploy.sh $(git log -n 1 --format=%s HEAD)';
+            sh 'deploy.sh $(git log -n 1 --format=%s HEAD)';
             sh 'rm -rf *';
         }
         failure {
@@ -39,7 +39,7 @@ pipeline {
         }
         always {
             sh 'echo build ended, deleting all resources...';
-            sh 'chmod +x ./delete.sh';
+            sh 'chmod +x delete.sh';
             sh './delete.sh';
         }
     }
