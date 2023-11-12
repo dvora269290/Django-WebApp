@@ -8,15 +8,15 @@
 # if [ "$push_to_registry" == "y" ]; then
 
 # Build the Docker image
-docker build -t my-django-app:2.2 .
+docker build -t my-django-app:2.1 .
 
 # Tag the Docker image with the artifact registry repository URL
-docker tag my-django-app:2.2  me-west1-docker.pkg.dev/devconnect-final-project/dvorah-hassoun-artifacts/my-django-app:2.2
+docker tag my-django-app:2.1 me-west1-docker.pkg.dev/devconnect-project/dvorah-hassoun-artifacts/my-django-app:2.1
 
 # Push the image to the Artifact Registry repository
-docker push me-west1-docker.pkg.dev/devconnect-final-project/dvorah-hassoun-artifacts/my-django-app:2.2
+docker push me-west1-docker.pkg.dev/devconnect-project/dvorah-hassoun-artifacts/my-django-app:2.1
 
-fi
+# fi
 
 
 
