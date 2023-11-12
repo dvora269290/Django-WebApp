@@ -3,11 +3,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                dir('django_web_app')
-                {
-                    sh 'chmod +x init.sh';
-                    sh 'init.sh';
-                }
+                sh 'chmod +x init.sh';
+                sh 'init.sh';
             }
         }
         stage('Test') {
