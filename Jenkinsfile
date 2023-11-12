@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh 'docker exec app python django_web_app/manage.py test';
+                sh 'docker exec me-west1-docker.pkg.dev/devconnect-project/dvorah-hassoun-artifacts/my-jenkins-image:1.3 python django_web_app/manage.py test';
                 sh 'sleep 4';
                 sh 'curl 34.95.9.207:8000';
                 sh 'status=$?';
